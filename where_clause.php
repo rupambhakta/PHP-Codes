@@ -26,5 +26,15 @@
             echo "<br>";
         }
     }
+    //Usage of where clause to update data
+    $sql = "UPDATE phptrip SET dest = 'From Goa' WHERE dest='Goa'";
+    $result = mysqli_query($conn,$sql);
+    $aff = mysqli_affected_rows($conn);
+    echo "Number of affected rows: $aff"."<br>";
+    if($result){
+        echo "We updated the record successfully.";
+    }else{
+        echo "We could not updat the record successfully.";
+    }
 
 ?>
